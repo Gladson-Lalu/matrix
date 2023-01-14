@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Header from '../../components/header';
 import { AppColor } from '../../constants/app_color';
+import background from '../../assets/images/header-background.jpg';
 
 function Home() {
     return (
@@ -9,7 +10,7 @@ function Home() {
             <HeaderBackground>
                 <HeaderBackgroundRight style={
                     {
-                        backgroundImage: `url("https://www.ibm.com/blogs/blockchain/wp-content/uploads/2020/08/webimage-CDF8199A-1B5F-4F41-A0A39FB80479972E.jpg")`,
+                        backgroundImage: `url(${background})`
                     }
                 }>
                     <RegisterButton>Register</RegisterButton>
@@ -50,8 +51,9 @@ const HeaderBackgroundRight = styled.div`
     top: 0;
     right: 0;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .3);
+    background-color: #000;
     height: 100%;
-    width: 75%;
+    width: 80%;
     background-size: cover;
       background-repeat: no-repeat;
     background-position: left;
@@ -70,7 +72,7 @@ const SubTitle = styled.h2`
     font-size: 1.2rem;
     color: ${AppColor.secondary};
     font-weight: 800;
-    text-shadow: 0px 10px 5px rgba(0, 0, 0, .2);
+  
     text-transform: uppercase;
     letter-spacing: 0.7rem;
     margin: 0;

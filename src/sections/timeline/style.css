@@ -1,0 +1,12 @@
+.date {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  opacity: 1 !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* change line width of the timeline */
+.timeline {
+  width: 2px !important;
+}

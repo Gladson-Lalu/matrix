@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 function Description() {
     return (
@@ -11,8 +10,9 @@ function Description() {
 }
 
 const DescriptionBox = styled.div`
+    margin-top: 150px;
     position: relative;
-    height: 50vh;
+    height: 100%;
     width: 98vw;
     display: flex;
     justify-content: center;

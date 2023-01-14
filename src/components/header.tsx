@@ -7,8 +7,9 @@ function Header() {
             <Menu>
                 <MenuItem>About</MenuItem>
                 <MenuItem>Events</MenuItem>
+                <MenuItem>Timeline</MenuItem>
+                <MenuItem>Location</MenuItem>
                 <MenuItem>Contact</MenuItem>
-                <MenuItem>Sign In</MenuItem>
             </Menu>
         </Nav>
     )
