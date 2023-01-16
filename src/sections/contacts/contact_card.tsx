@@ -1,10 +1,14 @@
 import { AppColor } from '../../constants/app_color'
 import styled from 'styled-components'
 import { MdPhone } from 'react-icons/md'
-function ContactCard({ key, name, phone }
-    : { key: number, name: string, phone: string }) {
+function ContactCard({ name, phone }
+    : { name: string, phone: string }) {
     return (
-        <Container key={key}>
+        <Container onClick={
+            () => {
+                window.open(`tel:${phone}`)
+            }
+        }>
             <PhoneIconContainer>
                 <MdPhone size={25} />
             </PhoneIconContainer>
@@ -27,6 +31,18 @@ const Container = styled.div`
                 border-radius: 4px;
                 margin-bottom: 20px;
                 border: 1px solid ${AppColor.secondary};
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    background-color: ${AppColor.secondary};
+                    color: #000;
+                }
+                & > div:first-child{
+                    border-color: ${AppColor.primary};
+                }
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
                 `
 
 const PhoneIconContainer = styled.div`
@@ -37,6 +53,7 @@ const PhoneIconContainer = styled.div`
                 height: 50px;
                 border-radius: 50%;
                 border: 2px solid ${AppColor.secondary};
+                
                 `
 
 const DetailContainer = styled.div`

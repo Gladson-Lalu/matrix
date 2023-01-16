@@ -21,18 +21,18 @@ const EventSection = () => {
         },
         {
             title: 'Campfire',
-            image: image2,
+            image: image3,
             description: ' Join us for a night under the stars and enjoy the warmth of a campfire. This event will feature live music, storytelling, and games. Bring your friends and marshmallows for a fun and relaxing night.',
 
         }
         , {
             title: 'Candle Light Dinner',
-            image: image3,
+            image: image4,
             description: 'Treat yourself to a romantic candlelight dinner. Enjoy a delicious meal and live music in a beautiful setting. Dress to impress and make memories with your loved ones.',
         },
         {
             title: 'Musical Fusion',
-            image: image4,
+            image: image2,
             description: 'Experience the fusion of different music styles and instruments. This event will feature performances by talented musicians who will blend traditional and modern music to create something new and unique. Come and enjoy the show!',
         }
     ];

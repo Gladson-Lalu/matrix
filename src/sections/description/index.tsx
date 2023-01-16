@@ -15,15 +15,19 @@ const DescriptionBox = styled.div`
     position: relative;
     height: 100%;
     width: 100%;
+    padding: 0 12vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media screen and (max-width: 768px) {
+        padding: 0 2rem;
+    }
     `;
 
 const DescriptionContent = styled.div`
-    position: relative;
-    width: 62vw;
+    width: 100%;
+    padding: 0 20px;
     font-size: 1.3rem;
     font-weight: 100;
     line-height: 2rem;

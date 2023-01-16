@@ -16,8 +16,11 @@ const Wrapper = styled.div`
     height: 20px;
     margin-top: 80px;
     padding: 0 2rem;  
-    margin-bottom: 2rem;
-    margin-top: 200px;
+    margin-bottom: 3rem;
+    margin-top: 180px;
+    @media screen and (max-width: 768px) {
+        margin-top: 80px;
+    }
     `;
 const Content = styled.p`
     color: #fff;

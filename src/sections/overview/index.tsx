@@ -26,11 +26,14 @@ function OverviewSection() {
 }
 
 const OverviewWrapper = styled.div`
-    width: 70%;
+    width: 100%;
     height: 100%;
-    padding: 0 2rem;
+    padding: 0 12vw;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 220px;
+    @media (max-width: 768px) {
+        padding: 0 2rem;
+    }
     `;
 const OverviewTitle = styled.h3`
     color: #fff;
@@ -67,6 +70,9 @@ const OverviewList = styled.ul`
         display: inline-block;
         width: 1rem;
         margin-right: 1rem;
+    }
+    @media (max-width: 768px) {
+        margin-left: 2rem;
     }
     `;
 

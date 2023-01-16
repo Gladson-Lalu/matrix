@@ -4,6 +4,7 @@ import { AppColor } from '../../constants/app_color';
 import background from '../../assets/images/header-background.jpg';
 
 function Home() {
+    const registerUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfkARugYMkBn9YVqFEwMs1w8iW6WX21zTaEEmZFJGqVFFRWCw/viewform?usp=sf_link";
     return (
         <HomeClass id='home'>
             <Header></Header>
@@ -13,7 +14,12 @@ function Home() {
                         backgroundImage: `url(${background})`
                     }
                 }>
-                    <RegisterButton>Register</RegisterButton>
+                    <RegisterButton onClick={
+                        () => {
+                            window.open(registerUrl)
+                        }
+                    }
+                    >Register</RegisterButton>
                 </HeaderBackgroundRight>
 
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { AppColor } from '../constants/app_color';
 import Hamburger from 'hamburger-react';
+
 function Header() {
     const [open, setOpen] = useState(false);
     const [scrolledAfterHome, setScrolledAfterHome] = useState(false);
@@ -20,12 +21,9 @@ function Header() {
             const overview = document.getElementById('overview');
             const overviewTop = overview?.offsetTop;
             const overviewHeight = overview?.clientHeight;
-            const location = document.getElementById('location');
-            const locationTop = location?.offsetTop;
-            const locationHeight = location?.clientHeight;
-            const contact = document.getElementById('contacts');
-            const contactTop = contact?.offsetTop;
-            const contactHeight = contact?.clientHeight;
+            const contact_location = document.getElementById('contact-location');
+            const contact_locationTop = contact_location!.offsetTop - 200;
+            const contact_locationHeight = contact_location?.clientHeight;
             const aboutMenuItem = document.getElementById('aboutMenuItem');
             const eventsMenuItem = document.getElementById('eventsMenuItem');
             const overviewMenuItem = document.getElementById('overviewMenuItem');
@@ -51,14 +49,11 @@ function Header() {
             } else {
                 setInactive(overviewMenuItem!);
             }
-            if (scroll >= locationTop! && scroll < locationTop! + locationHeight!) {
+            if (scroll >= contact_locationTop! && scroll < contact_locationTop! + contact_locationHeight!) {
                 setActive(locationMenuItem!);
-            } else {
-                setInactive(locationMenuItem!);
-            }
-            if (scroll >= contactTop! && scroll < contactTop! + contactHeight!) {
                 setActive(contactMenuItem!);
             } else {
+                setInactive(locationMenuItem!);
                 setInactive(contactMenuItem!);
             }
         });
@@ -179,6 +174,7 @@ function Header() {
 }
 
 const Nav = styled.nav`
+
     position: fixed;
     top: 0;
     left: 0;
@@ -195,8 +191,9 @@ const Nav = styled.nav`
     `;
 const Logo = styled.div`
     color: ${AppColor.secondary};
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
+    font-family: 'Cinzel Decorative', cursive;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     cursor: pointer;
@@ -240,7 +237,6 @@ const MenuItem = styled.li`
         margin-bottom: 1rem;
         font-weight: 900;
         font-size: 1rem;
-
     }
 
     `;

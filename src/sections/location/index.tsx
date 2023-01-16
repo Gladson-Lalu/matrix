@@ -22,18 +22,22 @@ const MapContainer = styled.div`
     padding: 0 0rem;
     @media screen and (max-width: 768px) {
         padding: 0 1rem;
-        margin-top: 0;
+        margin-top: 4rem;
     }
  
 `
 
 const MapIframe = styled.iframe`
-    width: 40vw;
+    width: 42vw;
     height: 100%;
     border: 0;
     border-radius: 6px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     pointer-events: visiblePainted;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 80vh;
+    }
 `
 
 const MapTitle = styled.h3`

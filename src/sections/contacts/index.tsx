@@ -30,9 +30,12 @@ function ContactSection() {
 }
 
 const SectionWrapper = styled.div`
-    width: 100%;
+    width: 40vw;
     height: 100%;
-    padding: 0 2rem;
+    @media (max-width: 768px) {
+        width: 100%;
+        margin: 0 auto;
+    }
     `;
 
 
@@ -49,6 +52,9 @@ const ContactList = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+        padding: 0 2rem;
+    }
     `;
 
 export default ContactSection
