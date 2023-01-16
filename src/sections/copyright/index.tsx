@@ -17,6 +17,7 @@ const Wrapper = styled.div`
     margin-top: 80px;
     padding: 0 2rem;  
     margin-bottom: 2rem;
+    margin-top: 200px;
     `;
 const Content = styled.p`
     color: #fff;

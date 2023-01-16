@@ -17,9 +17,8 @@ const MapSection = () => {
 
 const MapContainer = styled.div`
     width: 100%;
-    height: 90vh;
+    height: 100%;
     margin: 0 auto;
-    margin-top: 150px;
     padding: 0 0rem;
     @media screen and (max-width: 768px) {
         padding: 0 1rem;
@@ -29,10 +28,10 @@ const MapContainer = styled.div`
 `
 
 const MapIframe = styled.iframe`
-    width: 100%;
+    width: 40vw;
     height: 100%;
     border: 0;
-    border-radius: 2px;
+    border-radius: 6px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     pointer-events: visiblePainted;
 `

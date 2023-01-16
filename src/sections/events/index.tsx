@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./style.css";
 import Slider from 'react-slick';
 
@@ -13,8 +13,29 @@ import { motion } from 'framer-motion';
 const EventSection = () => {
 
     const [currentSlide, setCurrentSlide] = useState(0);
+    const events = [
+        {
+            title: 'Robotics Workshop',
+            image: image1,
+            description: 'Learn about the latest advancements in the Internet of Things (IoT) technology. This hands-on workshop will cover topics such as sensor networks, device connectivity, and robotics. Get a chance to work with industry-standard tools and develop your own IoT project.',
+        },
+        {
+            title: 'Campfire',
+            image: image2,
+            description: ' Join us for a night under the stars and enjoy the warmth of a campfire. This event will feature live music, storytelling, and games. Bring your friends and marshmallows for a fun and relaxing night.',
 
-
+        }
+        , {
+            title: 'Candle Light Dinner',
+            image: image3,
+            description: 'Treat yourself to a romantic candlelight dinner. Enjoy a delicious meal and live music in a beautiful setting. Dress to impress and make memories with your loved ones.',
+        },
+        {
+            title: 'Musical Fusion',
+            image: image4,
+            description: 'Experience the fusion of different music styles and instruments. This event will feature performances by talented musicians who will blend traditional and modern music to create something new and unique. Come and enjoy the show!',
+        }
+    ];
 
     const settings = {
         centerPadding: '0px',
@@ -59,41 +80,44 @@ const EventSection = () => {
         beforeChange: (_current: number, next: number) => setCurrentSlide(next),
     };
 
-    const images = [image1, image2, image3, image4];
     const [isHovered, setIsHovered] = useState(false);
+
+
     return (
         //fade in animation
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeIn", duration: 1 }}>
             <EventSectionClass id='events'>
                 <EventTitle>Events</EventTitle>
-                <Slider {...settings}>
-                    {images.map((image, index) => (
+                <Slider {...settings} >
+                    {events.map((event, index) => (
                         <Card key={index} className={index === currentSlide ? 'activeSlide' : 'slide'} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                             <Image style={
                                 {
-                                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.73)), url(${image})`,
+                                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.73)), url(${event.image})`,
                                     backgroundSize: 'cover',
                                     backgroundRepeat: 'no-repeat',
                                     backgroundPosition: 'center',
                                 }
                             } />
 
-                            <CardContent className={index == currentSlide && isHovered ? 'visible' : 'hidden'}>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati ad nisi magni vel a magnam maiores nulla numquam, eum qui.
+                            <CardContent className={index == currentSlide && (isHovered || window.innerWidth < 768) ? 'visible' : 'hidden'
+                            }>
+                                {event.description}
                             </CardContent>
-                            <CardTitle > Event {index + 1}</CardTitle>
+                            <CardTitle >{event.title}</CardTitle>
                         </Card>
                     ))}
                 </Slider>
 
             </EventSectionClass >
-        </motion.div>
+        </motion.div >
     );
 };
 
 const EventSectionClass = styled.div`
  width:  70vw;
- margin: 180px auto;
+ margin: 0 auto;
+ margin-top: 200px;
     `;
 
 const Image = styled.div`
@@ -112,17 +136,27 @@ const Card = styled.div`
 
 const CardContent = styled.div`
     position: absolute;
- 
-    height: 150px;
-    font-weight: 200;
+    height: 170px;
+    font-weight: 100;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
     bottom: 0;
     left: 0;
     margin: 0 0;
-    font-size: .9rem;
-    line-height: 1rem;
-    background: linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.788));
+    font-size: .85rem;
+    line-height: 1.3rem;
+    background: linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.95));
     padding: 1rem;
+    @media (max-width: 768px) {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+        &.visible {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+    }
     `;
 
 const CardTitle = styled.h1`
@@ -131,9 +165,11 @@ const CardTitle = styled.h1`
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 800;
     text-align: center;
+    line-height: 1.8rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 2rem;
     `;
 
@@ -148,6 +184,7 @@ const EventTitle = styled.h1`
         margin-bottom: 3rem;
     }
     `;
+
 
 
 export default EventSection;

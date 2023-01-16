@@ -3,14 +3,15 @@ function Description() {
     return (
         <DescriptionBox id='about'>
             <DescriptionContent>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quaerat aperiam vel amet mollitia voluptatibus voluptatum, iure, recusandae asperiores autem reprehenderit, odio quia tempora doloribus repellendus. Facere maiores ducimus vitae aut praesentium saepe ea. Quam temporibus quaerat corporis corrupti mollitia ipsam nostrum vero, qui assumenda non, facere est veritatis expedita.
+                In this age where Robotics and the Internet of Things rules the news, we know you are curious about it.  So IDEAMIRROR, College of Engineering Aranmula Presents MATRIX.
+                A 3-days IoT and Robotic workshop specifically designed for students who are interested in learning about the basics of robotics, IoT and its applications.
             </DescriptionContent>
         </DescriptionBox>
     )
 }
 
 const DescriptionBox = styled.div`
-    margin-top: 150px;
+    margin-top: 200px;
     position: relative;
     height: 100%;
     width: 100%;
@@ -22,10 +23,12 @@ const DescriptionBox = styled.div`
 
 const DescriptionContent = styled.div`
     position: relative;
-    width: 60vw;
-    font-size: 1.1rem;
+    width: 62vw;
+    font-size: 1.3rem;
     font-weight: 100;
-    line-height: 1.5rem;
+    line-height: 2rem;
        `;
+
+
 
 export default Description

@@ -4,19 +4,22 @@ import { AppColor } from '../constants/app_color';
 import Hamburger from 'hamburger-react';
 function Header() {
     const [open, setOpen] = useState(false);
+    const [scrolledAfterHome, setScrolledAfterHome] = useState(false);
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
             const scroll = window.scrollY;
+            const home = document.getElementById('home');
+            const homeTop = home?.offsetHeight;
             const about = document.getElementById('about');
             const aboutTop = about?.offsetTop;
             const aboutHeight = about?.clientHeight;
             const events = document.getElementById('events');
             const eventsTop = events?.offsetTop;
             const eventsHeight = events?.clientHeight;
-            const timeline = document.getElementById('timeline');
-            const timelineTop = timeline?.offsetTop;
-            const timelineHeight = timeline?.clientHeight;
+            const overview = document.getElementById('overview');
+            const overviewTop = overview?.offsetTop;
+            const overviewHeight = overview?.clientHeight;
             const location = document.getElementById('location');
             const locationTop = location?.offsetTop;
             const locationHeight = location?.clientHeight;
@@ -25,9 +28,14 @@ function Header() {
             const contactHeight = contact?.clientHeight;
             const aboutMenuItem = document.getElementById('aboutMenuItem');
             const eventsMenuItem = document.getElementById('eventsMenuItem');
-            const timelineMenuItem = document.getElementById('timelineMenuItem');
+            const overviewMenuItem = document.getElementById('overviewMenuItem');
             const locationMenuItem = document.getElementById('locationMenuItem');
             const contactMenuItem = document.getElementById('contactMenuItem');
+            if (scroll > homeTop!) {
+                setScrolledAfterHome(true);
+            } else {
+                setScrolledAfterHome(false);
+            }
             if (scroll >= aboutTop! - 300 && scroll < aboutTop! + aboutHeight!) {
                 setActive(aboutMenuItem!);
             } else {
@@ -38,10 +46,10 @@ function Header() {
             } else {
                 setInactive(eventsMenuItem!);
             }
-            if (scroll >= timelineTop! && scroll < timelineTop! + timelineHeight!) {
-                setActive(timelineMenuItem!);
+            if (scroll >= overviewTop! && scroll < overviewTop! + overviewHeight!) {
+                setActive(overviewMenuItem!);
             } else {
-                setInactive(timelineMenuItem!);
+                setInactive(overviewMenuItem!);
             }
             if (scroll >= locationTop! && scroll < locationTop! + locationHeight!) {
                 setActive(locationMenuItem!);
@@ -65,8 +73,17 @@ function Header() {
     }, []);
 
 
+
     return (
-        <Nav>
+        <Nav style={
+            //add a background color to the nav bar when the user scrolls down after the home section
+            {
+                backgroundColor: scrolledAfterHome ? `rgb(
+                    0,0,0,0.45)` : 'transparent',
+
+                transition: 'background-color 0.5s ease-in-out',
+            }
+        }>
             <Logo onClick={
                 () => {
                     const home = document.getElementById('home');
@@ -88,13 +105,19 @@ function Header() {
                     }
                 }>Events</MenuItem>
 
-                <MenuItem id='timelineMenuItem' onClick={
+                <MenuItem id='overviewMenuItem' onClick={
                     () => {
-                        const timeline = document.getElementById('timeline');
-                        timeline?.scrollIntoView({ behavior: 'smooth' });
+                        const overview = document.getElementById('overview');
+                        overview?.scrollIntoView({ behavior: 'smooth' });
                     }
-                }>Timeline</MenuItem>
-
+                }>overview</MenuItem>
+                <MenuItem id='contactMenuItem'
+                    onClick={
+                        () => {
+                            const contact = document.getElementById('contacts');
+                            contact?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }>Contact</MenuItem>
                 <MenuItem id='locationMenuItem'
                     onClick={
                         () => {
@@ -103,13 +126,7 @@ function Header() {
                         }
                     }>Location</MenuItem>
 
-                <MenuItem id='contactMenuItem'
-                    onClick={
-                        () => {
-                            const contact = document.getElementById('contacts');
-                            contact?.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }>Contact</MenuItem>
+
             </Menu>
             <HamburgerWrapper>
                 <Hamburger toggled={open} toggle={setOpen} direction={"right"} />
@@ -118,11 +135,6 @@ function Header() {
                 <HamburgerWrapper>
                     <Hamburger toggled={open} toggle={setOpen} direction={"right"} />
                 </HamburgerWrapper>
-                {/* <MenuItem id='aboutMenuItem'>About</MenuItem>
-                <MenuItem id='eventsMenuItem'>Events</MenuItem>
-                <MenuItem id='timelineMenuItem'>Timeline</MenuItem>
-                <MenuItem id='locationMenuItem'>Location</MenuItem>
-                <MenuItem id='contactMenuItem'>Contact</MenuItem> */}
                 <MenuItem id='aboutMenuItem' onClick={
                     () => {
                         setOpen(false);
@@ -137,13 +149,13 @@ function Header() {
                         events?.scrollIntoView({ behavior: 'smooth' });
                     }
                 }>Events</MenuItem>
-                <MenuItem id='timelineMenuItem' onClick={
+                <MenuItem id='overviewMenuItem' onClick={
                     () => {
                         setOpen(false);
-                        const timeline = document.getElementById('timeline');
-                        timeline?.scrollIntoView({ behavior: 'smooth' });
+                        const overview = document.getElementById('overview');
+                        overview?.scrollIntoView({ behavior: 'smooth' });
                     }
-                }>Timeline</MenuItem>
+                }>overview</MenuItem>
                 <MenuItem id='locationMenuItem'
                     onClick={
                         () => {
@@ -171,7 +183,7 @@ const Nav = styled.nav`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -183,8 +195,8 @@ const Nav = styled.nav`
     `;
 const Logo = styled.div`
     color: ${AppColor.secondary};
-    font-size: 1.1rem;
-    font-weight: 900;
+    font-size: 1.2rem;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     cursor: pointer;
@@ -200,8 +212,10 @@ const Menu = styled.ul`
     position: absolute;
     top: 0;
     right: 0;
-    margin: 0;
-    padding: 30px 20px;
+    height: 100%;
+    margin: auto 0;
+    justify-content: center;
+    align-items: center;
     margin-right: 2rem;
     display: flex;
     list-style: none;
@@ -213,7 +227,7 @@ const Menu = styled.ul`
 const MenuItem = styled.li`
     margin-left: 2rem;
     color: ${AppColor.secondary};
-    font-size: .8rem;
+    font-size: 1rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
