@@ -7,11 +7,14 @@ import image1 from '../../assets/images/events/1.jpg';
 import image2 from '../../assets/images/events/2.jpg';
 import image3 from '../../assets/images/events/3.jpg';
 import image4 from '../../assets/images/events/4.jpg';
+import { motion } from 'framer-motion';
 
 
 const EventSection = () => {
 
     const [currentSlide, setCurrentSlide] = useState(0);
+
+
 
     const settings = {
         centerPadding: '0px',
@@ -59,36 +62,38 @@ const EventSection = () => {
     const images = [image1, image2, image3, image4];
     const [isHovered, setIsHovered] = useState(false);
     return (
-        <EventSectionClass>
-            <EventTitle>Events</EventTitle>
-            <Slider {...settings}>
-                {images.map((image, index) => (
-                    //card content section should only be visible when the card is hovered and cardTitle should be visible when not hovered
-                    <Card key={index} className={index === currentSlide ? 'activeSlide' : 'slide'} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                        <Image style={
-                            {
-                                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.73)), url(${image})`,
-                                backgroundSize: 'cover',
-                                backgroundRepeat: 'no-repeat',
-                                backgroundPosition: 'center',
-                            }
-                        } />
+        //fade in animation
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeIn", duration: 1 }}>
+            <EventSectionClass id='events'>
+                <EventTitle>Events</EventTitle>
+                <Slider {...settings}>
+                    {images.map((image, index) => (
+                        <Card key={index} className={index === currentSlide ? 'activeSlide' : 'slide'} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                            <Image style={
+                                {
+                                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.73)), url(${image})`,
+                                    backgroundSize: 'cover',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundPosition: 'center',
+                                }
+                            } />
 
-                        <CardContent className={index == currentSlide && isHovered ? 'visible' : 'hidden'}>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati ad nisi magni vel a magnam maiores nulla numquam, eum qui.
-                        </CardContent>
-                        <CardTitle > Event {index + 1}</CardTitle>
-                    </Card>
-                ))}
-            </Slider>
+                            <CardContent className={index == currentSlide && isHovered ? 'visible' : 'hidden'}>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati ad nisi magni vel a magnam maiores nulla numquam, eum qui.
+                            </CardContent>
+                            <CardTitle > Event {index + 1}</CardTitle>
+                        </Card>
+                    ))}
+                </Slider>
 
-        </EventSectionClass >
+            </EventSectionClass >
+        </motion.div>
     );
 };
 
 const EventSectionClass = styled.div`
- width:  60vw;
- margin: 150px auto;
+ width:  70vw;
+ margin: 180px auto;
     `;
 
 const Image = styled.div`
@@ -138,7 +143,10 @@ const EventTitle = styled.h1`
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    @media (max-width: 768px) {
+        margin-bottom: 3rem;
+    }
     `;
 
 

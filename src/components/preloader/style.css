@@ -7,11 +7,36 @@
   height: 320px;
   position: relative;
   transform-style: preserve-3d;
-  scale: 0.5;
+  scale: 0.4;
 }
+
+@media screen and (max-width: 1920px) {
+  .loader {
+    scale: 0.6;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .loader {
+    scale: 0.5;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .loader {
+    scale: 0.45;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .loader {
+    scale: 0.4;
+  }
+}
+
 @media (max-width: 480px) {
   .loader {
-    zoom: 0.44;
+    scale: 0.35;
   }
 }
 .loader:before,

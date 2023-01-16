@@ -1,12 +1,16 @@
-import React from 'react'
 import styled from 'styled-components';
+import image1 from '../../assets/images/contacts/1.jpg';
+import image2 from '../../assets/images/contacts/2.jpg';
+import image3 from '../../assets/images/contacts/3.jpg';
+import image4 from '../../assets/images/contacts/4.jpg';
+
 
 const contactList = [
     {
         id: 1,
         title: 'Program Coordinator',
         name: 'Lorem Ipsum',
-        userImage: "https://loremflickr.com/720/720/user",
+        userImage: image1,
         email: 'lorem@email.com',
         number: '1234567890'
     },
@@ -14,7 +18,7 @@ const contactList = [
         id: 2,
         title: 'Program Coordinator',
         name: 'Lorem Ipsum',
-        userImage: "https://loremflickr.com/720/720/user",
+        userImage: image2,
         email: 'lorem@email.com',
         number: '1234567890',
     },
@@ -22,22 +26,28 @@ const contactList = [
         id: 3,
         title: 'Event Coordinator',
         name: 'Lorem Ipsum',
-        userImage: "https://loremflickr.com/720/720/user",
+        userImage: image3,
         email: 'lorem@t.com',
         number: '1234567890',
     },
+    {
+        id: 4,
+        title: 'Event Coordinator',
+        name: 'Lorem Ipsum',
+        userImage: image4,
+        email: 'lorem@t.com'
+    },
+
 ]
 
 function ContactSection() {
     return (
-        <SectionWrapper>
+        <SectionWrapper id='contacts'>
             <SectionTitle>Contact</SectionTitle>
             <GridView>
                 {contactList.map((contact) => (
-                    <Card key={contact.id}>
-                        <Image>
-                            <img src={contact.userImage} alt="user" />
-                        </Image>
+                    //add background image
+                    <Card key={contact.id} style={{ backgroundImage: `url(${contact.userImage})` }}>
                         <CardContent>
                             <h3>{contact.title}</h3>
                             <h5>{contact.name}</h5>
@@ -52,16 +62,22 @@ function ContactSection() {
 
 const SectionWrapper = styled.div`
     width: 100%;
-    height: 100vh;
-    padding: 0 3rem;
+    height: 100%;
+    padding: 0 2rem;
     margin: 0 auto;
     margin-top: 200px;
     `;
 
 const GridView = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
     `;
 
 const SectionTitle = styled.h3`
@@ -72,19 +88,16 @@ const SectionTitle = styled.h3`
     margin-bottom: 3rem;
     `;
 
-const Image = styled.div`
-    height: 100%;
-    object-fit: cover;
-    `;
-
 const Card = styled.div`
     position: relative;
-    border-radius: 10px;
+    border-radius: 4px;
     box-shadow: 0 0 2rem rgba(0, 0, 0, .2);
     width: 100%;
-    height: 25rem;
-    resize: both;
+    height: 350px;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     `;
 
 const CardContent = styled.div`

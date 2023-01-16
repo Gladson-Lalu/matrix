@@ -5,7 +5,7 @@ import background from '../../assets/images/header-background.jpg';
 
 function Home() {
     return (
-        <HomeClass>
+        <HomeClass id='home'>
             <Header></Header>
             <HeaderBackground>
                 <HeaderBackgroundRight style={
@@ -27,8 +27,7 @@ function Home() {
 }
 
 const HomeClass = styled.div`
-    position: relative;
-    width: 98vw;
+    width: 100%;
     height: 100vh;
     padding: 0;
     margin: 0;
@@ -57,28 +56,43 @@ const HeaderBackgroundRight = styled.div`
     background-size: cover;
       background-repeat: no-repeat;
     background-position: left;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        background-position: center;
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .2);
+    }
     `;
 const Title = styled.h1`
     font-size: 7rem;
     color: ${AppColor.secondary};
     font-weight: 900;
-
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     margin: 0;
     padding: 0;
+
+    @media screen and (max-width: 768px) {
+        font-size: 3.7rem;
+      
+        text-shadow: 0 0 10px #000;
+    }
     `;
 const SubTitle = styled.h2`
     font-size: 1.2rem;
     color: ${AppColor.secondary};
     font-weight: 800;
-  
-    text-transform: uppercase;
+      text-transform: uppercase;
     letter-spacing: 0.7rem;
     margin: 0;
     margin-top: 5px;
     margin-left: .3rem;
     padding: 0;
+    @media screen and (max-width: 768px) {
+        font-size: .75rem;
+        letter-spacing: 0.3rem;
+        //add shadow
+        text-shadow: 0 0 10px #000;
+    }
     `;
 const Wrap = styled.div`
     position: absolute;

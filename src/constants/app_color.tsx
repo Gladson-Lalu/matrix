@@ -4,5 +4,6 @@ export const AppColor = {
   secondary: "#fff",
   headerBackgroundLeft: "#131CA5",
   buttonColor: "#FEE601",
+  menuActive: "#FEE601",
 };
 

@@ -2,6 +2,7 @@ import './style.css'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import styled from 'styled-components';
 import 'react-vertical-timeline-component/style.min.css';
+import { motion } from 'framer-motion';
 
 
 
@@ -39,47 +40,55 @@ const data = [
 ]
 
 function TimeLineSection() {
-    return (
-        <TimeLineContainerWrapper>
-            <TimeLineTitle>Timeline</TimeLineTitle>
-            <VerticalTimeline
-                layout="2-columns"
-            >
-                {data.map((event, index) => (
-                    <VerticalTimelineElement
-                        key={index}
-                        date={'Day ' + event.day + ', ' + event.time}
-                        dateClassName="date"
-                        contentStyle={{
-                            background: '#000 linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.788))',
-                            color: '#000',
-                            backdropFilter: 'blur(10px)',
-                            backgroundImage: `url(${event.image})`,
-                            backgroundSize: 'cover',
-                            boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
-                            borderRadius: '6px',
-                            padding: '20px',
-                            height: '200px',
-                            width: '300px',
 
-                        }}
-                        iconStyle={{ visibility: 'hidden' }}
-                        contentArrowStyle={{ borderRight: '7px solid  #fff' }}
-                    >
-                        <TimeLineCardTitle>{event.title}</TimeLineCardTitle>
-                        <TimeLineCardDescription>{event.description}</TimeLineCardDescription>
-                    </VerticalTimelineElement>
-                ))}
-            </VerticalTimeline>
-        </TimeLineContainerWrapper>
+    return (
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ ease: "easeIn", duration: 1 }}>
+            <TimeLineContainerWrapper id='timeline'>
+                <TimeLineTitle>Timeline</TimeLineTitle>
+                <VerticalTimeline
+                    layout={window.innerWidth < 768 ? '1-column' : '2-columns'}
+                >
+                    {data.map((event, index) => (
+                        <VerticalTimelineElement
+                            key={index}
+                            date={'Day ' + event.day + ', ' + event.time}
+                            dateClassName="date"
+                            contentStyle={{
+                                background: '#000 linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.788))',
+                                color: '#000',
+                                backdropFilter: 'blur(10px)',
+                                backgroundImage: `url(${event.image})`,
+                                backgroundSize: 'cover',
+                                boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+                                borderRadius: '6px',
+                                padding: '20px',
+                                minHeight: (window.innerWidth < 768 ? '200px' : '300px'),
+                                maxWidth: (window.innerWidth < 768 ? '100%' : '400px'),
+                            }}
+                            iconStyle={{ visibility: 'hidden' }}
+                            contentArrowStyle={{ borderRight: '7px solid  #fff' }}
+                        >
+                            <TimeLineCardTitle>{event.title}</TimeLineCardTitle>
+                            <TimeLineCardDescription>{event.description}</TimeLineCardDescription>
+                        </VerticalTimelineElement>
+                    ))}
+                </VerticalTimeline>
+            </TimeLineContainerWrapper >
+        </motion.div>
     )
 }
 
 const TimeLineContainerWrapper = styled.div`
-    width: 60vw;
+    width: 80vw;
     margin-top: 150px;
     margin: 0 auto;
     padding: 0 2rem;
+
+    @media screen and (max-width: 768px) {
+        width: 100vw;
+        padding: 0 1rem;
+        margin: 0 auto;
+    }
     `;
 
 
@@ -89,6 +98,9 @@ const TimeLineTitle = styled.h3`
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 2rem;
+    }
     `;
 
 const TimeLineCardTitle = styled.h3`
