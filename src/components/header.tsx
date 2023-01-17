@@ -127,9 +127,15 @@ function Header() {
                 <Hamburger toggled={open} toggle={setOpen} direction={"right"} />
             </HamburgerWrapper>
             {open && <MobileMenu>
-                <HamburgerWrapper>
-                    <Hamburger toggled={open} toggle={setOpen} direction={"right"} />
-                </HamburgerWrapper>
+                <Nav style={
+                    {
+                        justifyContent: 'right',
+                    }
+                }>
+                    <HamburgerWrapper>
+                        <Hamburger toggled={open} toggle={setOpen} direction={"right"} />
+                    </HamburgerWrapper>
+                </Nav>
                 <MenuItem id='aboutMenuItem' onClick={
                     () => {
                         setOpen(false);
@@ -174,7 +180,6 @@ function Header() {
 }
 
 const Nav = styled.nav`
-
     position: fixed;
     top: 0;
     left: 0;
@@ -242,11 +247,9 @@ const MenuItem = styled.li`
     `;
 const HamburgerWrapper = styled.div`
     display: none;
-    position: absolute;
+    position: relative;
         top: 0;
-        right: 0;
         margin: 0;
-        padding: 30px 20px;
     @media screen and (max-width: 768px) {
         display: block;
     }
