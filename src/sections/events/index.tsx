@@ -118,6 +118,9 @@ const EventSectionClass = styled.div`
  width:  70vw;
  margin: 0 auto;
  margin-top: 200px;
+ @media (max-width: 768px) {
+    width: 85vw;
+    }
     `;
 
 const Image = styled.div`

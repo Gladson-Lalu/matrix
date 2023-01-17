@@ -76,11 +76,12 @@ const Title = styled.h1`
     letter-spacing: 0.1rem;
     margin: 0;
     padding: 0;
+    text-shadow: 0 0 10px #000;
 
     @media screen and (max-width: 768px) {
         font-size: 3.7rem;
       
-        text-shadow: 0 0 10px #000;
+        text-shadow: 0 0 13px #000;
     }
     `;
 const SubTitle = styled.h2`
