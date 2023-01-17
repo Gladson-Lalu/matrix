@@ -140,6 +140,7 @@ const CardContent = styled.div`
     position: absolute;
     height: 170px;
     font-weight: 100;
+    color: #fff;
     width: 100%;
     font-family: 'Poppins', sans-serif;
     bottom: 0;

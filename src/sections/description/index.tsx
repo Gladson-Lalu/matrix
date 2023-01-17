@@ -30,6 +30,7 @@ const DescriptionContent = styled.div`
     padding: 0 20px;
     font-size: 1.3rem;
     font-weight: 100;
+    color: #fff;
     line-height: 2rem;
        `;
 
