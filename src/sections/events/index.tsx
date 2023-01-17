@@ -148,17 +148,15 @@ const CardContent = styled.div`
     margin: 0 0;
     font-size: .85rem;
     line-height: 1.3rem;
-    background: linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.95));
+    background: linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.99));
     padding: 1rem;
     @media (max-width: 768px) {
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 0.5s linear;
-        &.visible {
-            visibility: visible;
-            opacity: 1;
-            transition: visibility 0s, opacity 0.5s linear;
-        }
+        visibility: visible;
+        height: 200px;
+        padding: 10px 20px;
+        line-height: 1.4rem;
+        font-size: .9rem;
+        font-weight: 300;
     }
     `;
 

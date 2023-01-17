@@ -55,7 +55,7 @@ const HeaderBackgroundRight = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .3);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .35);
     background-color: #000;
     height: 100%;
     width: 80%;
@@ -65,7 +65,7 @@ const HeaderBackgroundRight = styled.div`
     @media screen and (max-width: 768px) {
         width: 100%;
         background-position: center;
-        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .2);
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .1325);
     }
     `;
 const Title = styled.h1`
@@ -76,12 +76,11 @@ const Title = styled.h1`
     letter-spacing: 0.1rem;
     margin: 0;
     padding: 0;
-    text-shadow: 0 0 10px #000;
-
+    text-shadow: 0 0 8px #000;
     @media screen and (max-width: 768px) {
-        font-size: 3.7rem;
+        font-size: 4rem;
       
-        text-shadow: 0 0 13px #000;
+        text-shadow: 0 0 12px #000;
     }
     `;
 const SubTitle = styled.h2`
@@ -92,18 +91,18 @@ const SubTitle = styled.h2`
     letter-spacing: 0.7rem;
     margin: 0;
     margin-top: 5px;
+    text-shadow: 0 0 20px #000;
     margin-left: .3rem;
     padding: 0;
     @media screen and (max-width: 768px) {
         font-size: .75rem;
         letter-spacing: 0.3rem;
-        //add shadow
-        text-shadow: 0 0 10px #000;
+        text-shadow: 0 0 15px #000;
     }
     `;
 const Wrap = styled.div`
     position: absolute;
-    top: 30%;
+    top: 31%;
     left:16%;
     padding: 0 ;
     overflow: hidden;

@@ -29,7 +29,7 @@ const Content = styled.p`
     text-align: center;
     @media screen and (max-width: 768px) {
         font-size: .8rem;
-        
+        padding: 0 1rem;
     }
     `;
 

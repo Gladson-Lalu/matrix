@@ -20,6 +20,15 @@ function ContactCard({ name, phone }
     )
 }
 
+const PhoneIconContainer = styled.div`
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 2px solid ${AppColor.secondary};
+                `
 const Container = styled.div`
                 width: 36vw;
                 display: flex;
@@ -32,29 +41,20 @@ const Container = styled.div`
                 margin-bottom: 20px;
                 border: 1px solid ${AppColor.secondary};
                 cursor: pointer;
-                transition: all 0.3s ease-in-out;
+                transition: all 0.2s ease-in-out;
                 &:hover{
                     background-color: ${AppColor.secondary};
                     color: #000;
                 }
-                & > div:first-child{
-                    border-color: ${AppColor.primary};
+                &:hover ${PhoneIconContainer} {
+                    border: 2px solid #000;
                 }
                 @media (max-width: 768px) {
                     width: 100%;
                 }
                 `
 
-const PhoneIconContainer = styled.div`
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                border: 2px solid ${AppColor.secondary};
-                
-                `
+
 
 const DetailContainer = styled.div`
                 display: flex;
