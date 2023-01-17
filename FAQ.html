@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+
+        body {
+            color: rgb(255, 255, 255);
+            background-color: #102670;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .faq {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 5rem;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
+
+        .faq-think {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: .5rem;
+            width: 25rem;
+        }
+
+        .faq-think b {
+            padding-left: 1.5rem;
+            font-size: 2.5rem;
+            width: fit-content;
+        }
+
+        .faq-think p {
+            padding-left: 1.5rem;
+            font-size: 1.2rem;
+            /* width: 70%; */
+        }
+
+        .faq-think img {
+            width: 25rem;
+        }
+
+        input[type='checkbox'] {
+            display: none;
+        }
+
+        .questions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 55rem;
+        }
+
+        .wrap-collabsible {
+            padding: 0 1rem;
+            width: fit-content;
+        }
+
+        .lbl-toggle {
+            display: block;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 1rem;
+            color: rgb(255, 255, 255);
+            background-color: #0011B1;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.25s ease-out;
+        }
+
+        .lbl-toggle:hover {
+            color: #FFF;
+        }
+
+        .lbl-toggle::before {
+            content: ' ';
+            float: right;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid currentColor;
+            vertical-align: middle;
+            margin-right: .7rem;
+            transform: translateY(6px);
+            transition: transform .2s ease-out;
+        }
+
+        .toggle:checked+.lbl-toggle::before {
+            transform: rotate(90deg) translateX(-3px);
+        }
+
+        .collapsible-content {
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height .25s ease-in-out;
+        }
+
+        .toggle:checked+.lbl-toggle+.collapsible-content {
+            max-height: 350px;
+        }
+
+        .toggle:checked+.lbl-toggle {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .toggle:checked+.lbl-toggle {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #ffffff;
+        }
+
+        .collapsible-content .content-inner {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            padding: .5rem 1rem;
+        }
+
+        .collapsible-content p {
+            margin-bottom: 0;
+        }
+
+        @media (width<1025px) {
+            .faq {
+                padding: 0rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (width<800px) {
+            .faq {
+                margin-top: 2rem;
+                padding: 0rem;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="faq" id="faq">
+        <div class="faq-think" data-aos="fade-right">
+            <b>FAQ</b>
+            <p>Some of the frequently asked questions</p>
+            <img src="thinking 1.png" alt="Thinking">
+        </div>
+
+        <div class="questions">
+            <div class="wrap-collabsible" data-aos="zoom-in-up">
+                <input id="collapsible1" class="toggle" type="checkbox" checked>
+                <label for="collapsible1" class="lbl-toggle">Lorem Ipsum is simply dummy text ?</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrap-collabsible" data-aos="zoom-in-up" data-aos-delay="100">
+                <input id="collapsible2" class="toggle" type="checkbox">
+                <label for="collapsible2" class="lbl-toggle">Lorem Ipsum is simply dummy text ?</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-collabsible" data-aos="zoom-in-up" data-aos-delay="200">
+                <input id="collapsible3" class="toggle" type="checkbox">
+                <label for="collapsible3" class="lbl-toggle">Lorem Ipsum is simply dummy text ?</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-collabsible" data-aos="zoom-in-up" data-aos-delay="300">
+                <input id="collapsible4" class="toggle" type="checkbox">
+                <label for="collapsible4" class="lbl-toggle">Lorem Ipsum is simply dummy text ?</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-collabsible" data-aos="zoom-in-up" data-aos-delay="400">
+                <input id="collapsible5" class="toggle" type="checkbox">
+                <label for="collapsible5" class="lbl-toggle">Lorem Ipsum is simply dummy text ?</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-collabsible" data-aos="zoom-in-up" data-aos-delay="500">
+                <input id="collapsible6" class="toggle" type="checkbox">
+                <label for="collapsible6" class="lbl-toggle">Lorem Ipsum is simply dummy text ?</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
