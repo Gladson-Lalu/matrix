@@ -65,7 +65,7 @@ const HeaderBackgroundRight = styled.div`
     @media screen and (max-width: 768px) {
         width: 100%;
         background-position: center;
-        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .1325);
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .23);
     }
     `;
 const Title = styled.h1`

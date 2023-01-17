@@ -131,7 +131,6 @@ const Image = styled.div`
 const Card = styled.div`
     position: relative;
     border-radius: 10px;
-
     overflow: hidden;
     object-fit: cover;
     padding: 0;
@@ -157,6 +156,7 @@ const CardContent = styled.div`
         line-height: 1.4rem;
         font-size: .9rem;
         font-weight: 300;
+        transition: none !important;
     }
     `;
 
