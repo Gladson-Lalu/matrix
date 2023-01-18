@@ -230,6 +230,7 @@ const MenuItem = styled.li`
     margin-left: 2rem;
     color: ${AppColor.secondary};
     font-size: 1rem;
+  
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1rem;

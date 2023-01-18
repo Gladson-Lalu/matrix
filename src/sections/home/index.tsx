@@ -35,6 +35,8 @@ function Home() {
 const HomeClass = styled.div`
     width: 100%;
     height: 100vh;
+    font-family:""
+    
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -55,23 +57,24 @@ const HeaderBackgroundRight = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .35);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .30);
     background-color: #000;
     height: 100%;
     width: 80%;
     background-size: cover;
       background-repeat: no-repeat;
-    background-position: left;
+    background-position: center;
     @media screen and (max-width: 768px) {
         width: 100%;
         background-position: center;
-        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .23);
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .30);
     }
     `;
 const Title = styled.h1`
     font-size: 7rem;
     color: ${AppColor.secondary};
     font-weight: 900;
+    font-family: "Noto Serif", serif;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     margin: 0;
@@ -85,6 +88,7 @@ const Title = styled.h1`
     `;
 const SubTitle = styled.h2`
     font-size: 1.2rem;
+    font-family: "Noto Serif", serif;s
     color: ${AppColor.secondary};
     font-weight: 800;
       text-transform: uppercase;
@@ -110,12 +114,13 @@ const Wrap = styled.div`
 const RegisterButton = styled.div`
     position: absolute;
     bottom: 0;
+    font-family: "Noto Serif", serif;
     margin: 0;
     left: 0;
     background: ${AppColor.buttonColor};
     color: ${AppColor.primary};
     padding: 2rem 3rem;
-    font-size: .85rem;
+    font-size: .96rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.1rem;

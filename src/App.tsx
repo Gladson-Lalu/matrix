@@ -1,5 +1,5 @@
 import React from "react";
-import WebApp from "./sections";
+import WebApp from "./screens";
 import Preloader from "./components/preloader";
 
 class App extends React.Component {

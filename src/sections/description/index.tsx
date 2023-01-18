@@ -29,9 +29,12 @@ const DescriptionContent = styled.div`
     width: 100%;
     padding: 0 20px;
     font-size: 1.3rem;
-    font-weight: 100;
+    font-weight: 500;
     color: #fff;
     line-height: 2rem;
+    @media screen and (max-width: 768px) {
+       font-size:1.1rem;
+    }
        `;
 
 

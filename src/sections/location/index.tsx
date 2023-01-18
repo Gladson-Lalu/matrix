@@ -42,6 +42,7 @@ const MapIframe = styled.iframe`
 
 const MapTitle = styled.h3`
     color: #fff;
+    font-family: "Noto Serif", serif;
     font-size: 2rem;
     font-weight: 700;
     text-align: center;

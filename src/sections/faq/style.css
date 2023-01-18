@@ -1,0 +1,157 @@
+.faq {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3.5rem;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.faq-think {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 30%;
+}
+
+.faq-think b {
+  padding-left: 1.5rem;
+  font-size: 2.5rem;
+  width: fit-content;
+  margin-bottom: 0.7rem;
+}
+
+.faq-think p {
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.faq-think img {
+  width: 95%;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 60%;
+  margin-right: 0.8rem;
+}
+
+.wrap-collabsible {
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.lbl-toggle {
+  display: block;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: #0011b1;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+  color: #fff;
+}
+
+.lbl-toggle::before {
+  content: " ";
+  float: right;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid currentColor;
+  vertical-align: middle;
+  margin-right: 0.7rem;
+  transform: translateY(6px);
+  transition: transform 0.2s ease-out;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 350px;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.toggle:checked + .lbl-toggle {
+  background-color: #000;
+  color: #ffffff;
+}
+
+.collapsible-content .content-inner {
+  background-color: #000;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 0.5rem 1rem;
+}
+
+.collapsible-content p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .faq {
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    overflow: visible;
+    margin-top: 100px;
+    margin-bottom: 40px;
+  }
+  .faq-think {
+    width: 100%;
+    padding: 20px;
+  }
+  .faq-think b {
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .faq-think p {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  .faq-think img {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .questions {
+    width: 100%;
+    padding: 1rem 1.1rem;
+  }
+  .collapsible-content .content-inner {
+    font-size: 1rem;
+  }
+  .lbl-toggle {
+    font-size: 0.8rem;
+  }
+}

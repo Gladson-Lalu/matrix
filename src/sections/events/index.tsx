@@ -118,9 +118,13 @@ const EventSectionClass = styled.div`
  width:  70vw;
  margin: 0 auto;
  margin-top: 200px;
+ @media (max-width: 1024px) {
+    width: 90vw;
+    }
  @media (max-width: 768px) {
     width: 85vw;
     }
+  
     `;
 
 const Image = styled.div`
@@ -139,7 +143,7 @@ const Card = styled.div`
 const CardContent = styled.div`
     position: absolute;
     height: 170px;
-    font-weight: 100;
+    font-weight: 300;
     color: #fff;
     width: 100%;
     font-family: 'Poppins', sans-serif;
@@ -179,12 +183,10 @@ const CardTitle = styled.h1`
 const EventTitle = styled.h1`
     color: #fff;
     font-size: 2rem;
+    font-family: "Noto Serif", serif;
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
-    @media (max-width: 768px) {
-        margin-bottom: 3rem;
-    }
     `;
 
 

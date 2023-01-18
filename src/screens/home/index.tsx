@@ -1,19 +1,20 @@
-import Description from './description'
-import Home from './home'
-import EventSection from './events'
-import MapSection from './location'
-import ContactSection from './contacts'
 import { motion } from "framer-motion";
-import CopyrightTag from './copyright'
-import styled from 'styled-components'
-import OverviewSection from './overview'
-function WebApp() {
+import ContactSection from "../../sections/contacts";
+import CopyrightTag from "../../sections/copyright";
+import Description from "../../sections/description";
+import EventSection from "../../sections/events";
+import Home from "../../sections/home";
+import MapSection from "../../sections/location";
+import OverviewSection from "../../sections/overview";
+import styled from "styled-components";
+
+function HomeScreen() {
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ ease: "circIn", duration: .8 }}
+            transition={{ ease: "easeIn", duration: 1 }}
         >
 
             <Home></Home>
@@ -49,4 +50,4 @@ const MapAndContactWrapper = styled.div`
     }
     `;
 
-export default WebApp
+export default HomeScreen

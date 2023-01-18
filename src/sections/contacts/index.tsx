@@ -41,6 +41,7 @@ const SectionWrapper = styled.div`
 
 const SectionTitle = styled.h3`
     color: #fff;
+    font-family: "Noto Serif", serif;
     font-size: 2rem;
     font-weight: 700;
     text-align: center;

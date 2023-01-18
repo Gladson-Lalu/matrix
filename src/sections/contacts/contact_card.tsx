@@ -29,12 +29,11 @@ const PhoneIconContainer = styled.div`
                 border-radius: 50%;
                 border: 2px solid ${AppColor.secondary};
                 `
-const Container = styled.div`
+const Container = styled.button`
                 width: 36vw;
                 display: flex;
                 flex-direction: row;
                 padding: 10px;
-                background-color:#000;
                 color: ${AppColor.secondary};
                 padding: 20px;
                 border-radius: 4px;
