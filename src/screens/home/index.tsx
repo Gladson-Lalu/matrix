@@ -14,7 +14,7 @@ function HomeScreen() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ ease: "easeIn", duration: 1 }}
+            transition={{ ease: "circIn", duration: 1 }}
         >
 
             <Home></Home>

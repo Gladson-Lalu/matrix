@@ -25,7 +25,7 @@ function KnowMore() {
     return (
         <section className="faq" id="faq">
 
-            <div className="faq-think" data-aos="fade-right">
+            <div className="faq-think">
                 <b>FAQ</b>
                 <p>Some of the frequently asked questions</p>
                 <img src={thinking1} alt="Thinking" />
@@ -33,7 +33,7 @@ function KnowMore() {
             <div className="questions">
                 {data.map(
                     (e, i) => {
-                        return (<div className="wrap-collabsible" data-aos="zoom-in-up" data-aos-delay="100">
+                        return (<div className="wrap-collabsible">
                             <input id={`collapsible${i}`} className="toggle" type="checkbox" />
                             <label htmlFor={`collapsible${i}`} className="lbl-toggle">{e.q}</label>
                             <div className="collapsible-content">
