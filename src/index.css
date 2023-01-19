@@ -8,7 +8,7 @@
   font-weight: 400;
   --background: #121621;
   color-scheme: light dark;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.87);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
