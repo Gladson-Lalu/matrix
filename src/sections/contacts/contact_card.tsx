@@ -33,6 +33,7 @@ const Container = styled.button`
                 width: 36vw;
                 display: flex;
                 flex-direction: row;
+                background-color:#1a1a1a;
                 padding: 10px;
                 color: ${AppColor.secondary};
                 padding: 20px;

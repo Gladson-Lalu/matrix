@@ -7,6 +7,7 @@
   flex-direction: row-reverse;
   flex-wrap: wrap;
   overflow: hidden;
+  color: #fff;
 }
 
 .faq-think {
@@ -21,6 +22,7 @@
   padding-left: 1.5rem;
   font-size: 2.5rem;
   width: fit-content;
+
   margin-bottom: 0.7rem;
 }
 

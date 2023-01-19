@@ -88,8 +88,8 @@ const Title = styled.h1`
     `;
 const SubTitle = styled.h2`
     font-size: 1.2rem;
-    font-family: "Noto Serif", serif;s
-    color: ${AppColor.secondary};
+    font-family: "Noto Serif", serif;
+    color: #fff;
     font-weight: 800;
       text-transform: uppercase;
     letter-spacing: 0.7rem;

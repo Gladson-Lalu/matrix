@@ -124,7 +124,7 @@ function Header() {
 
             </Menu>
             <HamburgerWrapper>
-                <Hamburger toggled={open} toggle={setOpen} direction={"right"} />
+                <Hamburger toggled={open} toggle={setOpen} direction={"right"} color='#fff' />
             </HamburgerWrapper>
             {open && <MobileMenu>
                 <Nav style={
