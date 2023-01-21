@@ -16,6 +16,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.no-scroll {
+  --webkit-overflow-scrolling: hidden;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

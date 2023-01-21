@@ -24,7 +24,6 @@ const data = [
 function KnowMore() {
     return (
         <section className="faq" id="faq">
-
             <div className="faq-think">
                 <b>FAQ</b>
                 <p>Some of the frequently asked questions</p>

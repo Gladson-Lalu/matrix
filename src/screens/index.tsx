@@ -9,8 +9,6 @@ function WebApp() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<HomeScreen></HomeScreen>}></Route>
-            </Routes>
-            <Routes>
                 <Route path='/know-more' element={<KnoMoreSection></KnoMoreSection>}></Route>
             </Routes>
         </BrowserRouter>
