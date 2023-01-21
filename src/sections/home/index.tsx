@@ -183,7 +183,7 @@ const PopUpMenu = styled.div`
     top: 0;
     left: 0;
     height: 100%;
-    background: rgba(0, 0, 0, .4);
+    background: rgba(0, 0, 0, .3);
     z-index: 100;
     padding: 0 24%;
     display: flex;
@@ -193,8 +193,9 @@ const PopUpMenu = styled.div`
     flex-direction: column;
     transition: all .4s ease;
     @media screen and (max-width: 768px) {
-        padding: 0 3%;
+        padding: 0 5%;
         margin: 0 auto;
+        background: rgba(0, 0, 0, .1);
     }
 `
 
@@ -203,9 +204,12 @@ const PopMenuHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: #1a1a1a;
+    background: 	#1a1a1a;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    @media screen and (max-width: 768px) {
+        background: 	#282828;
+    }
 `
 
 const PopMenuTitle = styled.h1`
@@ -239,12 +243,16 @@ const PopMenuCloseButton = styled.div`
 const PopMenuContent = styled.div`
     padding: 2rem 3rem;
     margin: 0 auto;
-    background: #1a1a1a;
+    background	#1a1a1a;
     color: #fff;
     font-size: 1rem;
     letter-spacing: .07rem;
     line-height: 1.65rem;
     font-weight: 500;
+    @media screen and (max-width: 768px) {
+        padding: 1rem 1.5rem;
+        background	#282828;
+    }
 
 `
 
@@ -256,6 +264,10 @@ const PopMenuFooter = styled.div`
     background:#1a1a1a;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    @media screen and (max-width: 768px) {
+        padding: 1rem 1.5rem;
+        background	#282828;
+    }
 `
 
 const IndividualRegisterButton = styled.div`
@@ -282,10 +294,10 @@ const IndividualRegisterButton = styled.div`
         box-shadow: 0 0 30px #000;
     }
     @media screen and (max-width: 768px) {
-        font-size: .6rem;
-        letter-spacing: 0.05rem;
+        font-size: .75rem;
         padding: .8rem;
         text-align: center;
+        margin: 0 20px 0 0;
     }
 `
 
@@ -313,9 +325,9 @@ const TeamRegisterButton = styled.div`
         box-shadow: 0 0 30px #000;
     }
     @media screen and (max-width: 768px) {
-        font-size: .6rem;
-        letter-spacing: 0.05rem;
-        padding: .8rem;
+        font-size: .75rem;
+        margin: 0px;
+        padding: .8rem; 
         text-align: center;
     }
 `
